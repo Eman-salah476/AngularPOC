@@ -1,0 +1,42 @@
+[
+    {
+        "id":1,
+        "title":"Sports",
+        "brief":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae atque illo doloremque omnis, voluptatum ipsam ex. Molestias, tempora officiis illo earum autem ut iste distinctio, corporis aut voluptatum at suscipit.",
+        "dateFrom":"2022-5-3",
+        "dateTo":"2022-6-2",
+        "image":"./assets/pagenotfound.png"
+    },
+    {
+        "id":2,
+        "title":"Politics",
+        "brief":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae atque illo doloremque omnis, voluptatum ipsam ex. Molestias, tempora officiis illo earum autem ut iste distinctio, corporis aut voluptatum at suscipit.",
+        "dateFrom":"2022-5-1",
+        "dateTo":"2022-5-3",
+        "image":"D:/images/wallhaven-1j8dpg"
+    },
+    {
+        "id":3,
+        "title":"Fashion",
+        "brief":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae atque illo doloremque omnis, voluptatum ipsam ex. Molestias, tempora officiis illo earum autem ut iste distinctio, corporis aut voluptatum at suscipit.",
+        "dateFrom":"2022-5-3",
+        "dateTo":"2022-6-2",
+        "image":""
+    },
+    {
+        "id":4,
+        "title":"Cenima",
+        "brief":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae atque illo doloremque omnis, voluptatum ipsam ex. Molestias, tempora officiis illo earum autem ut iste distinctio, corporis aut voluptatum at suscipit.",
+        "dateFrom":"2022-5-3",
+        "dateTo":"2022-6-2",
+        "image":""
+    },
+    {
+        "id":5,
+        "title":"Sports",
+        "brief":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae atque illo doloremque omnis, voluptatum ipsam ex. Molestias, tempora officiis illo earum autem ut iste distinctio, corporis aut voluptatum at suscipit.",
+        "dateFrom":"2022-5-3",
+        "dateTo":"2022-6-2",
+        "image":""
+    }
+]

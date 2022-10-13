@@ -1,0 +1,40 @@
+<h4>Article Form</h4>
+<hr />
+
+<form [formGroup]="articleForm" (ngSubmit)="OnFormSubmit()">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" formControlName="title">
+        <span class="text-danger" *ngIf="!articleForm.get('title').valid && articleForm.get('title').touched">Enter Title </span>
+    </div>
+
+    <div class="mb-3">
+        <label for="brief" class="form-label">Brief</label>
+        <input type="text" class="form-control" id="brief" formControlName="brief">
+        <span class="text-danger" *ngIf="!articleForm.get('brief').valid && articleForm.get('brief').touched">Enter Brief</span>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="dateFrom" class="form-label">Date From</label>
+        <input type="date" class="form-control" id="dateFrom" formControlName="dateFrom">
+        <span class="text-danger" *ngIf="!articleForm.get('dateFrom').valid && articleForm.get('dateFrom').touched">Enter Date</span>
+
+    </div>
+    <div class="mb-3">
+        <label for="dateTo" class="form-label">Date To</label>
+        <input type="date" class="form-control" id="dateTo" formControlName="dateTo">
+        <span class="text-danger" *ngIf="!articleForm.get('dateTo').valid && articleForm.get('dateTo').touched">Enter Date</span>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="file" class="form-control" id="image" formControlName="image" (change)="OnFileSelect($event)">
+        <span class="text-danger" *ngIf="!articleForm.get('image').valid && articleForm.get('image').touched">Upload Image</span>
+
+    </div>
+
+    <button class="btn btn-primary me-3" routerLink="/home">Back</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,61 @@
+<div class="row justify-content-between align-baseline">
+    <h4 class="col-6">Articles</h4>
+    <a class="col-2 btn btn-primary" routerLink="/create">Create New Article</a>
+</div>
+<hr />
+<div class="container">
+<!-- SEarch Input  -->
+<div class="row">
+    <input type="text" placeholder="Search in current page" class="form-control my-3" [(ngModel)]="searchText">
+    <input type="text" placeholder="Search in Database" class="form-control my-3" [(ngModel)]="searchText2" (ngModelChange)="SearchData()">
+</div>
+
+<!-- Articles -->
+    <div *ngIf="articles.length > 0; else Loading;">
+        <div class="card mt-2 p-2" *ngFor="let article of articles | search:searchText">
+            <div class="row">
+                <div class="col-lg-2 border-right">
+                    <img [src]="article.image" width="150" height="120" alt="image" />
+                </div>
+                <div class="col-lg-6">
+                    <h5>{{article.title}}</h5>
+                    <p>{{article.brief}}</p>
+                </div>
+                <div class="col-lg-2 text-end border-right">
+                    <p class="fw-light">{{article.dateFrom | date:'M/d/y'}}</p>
+                    <p class="fw-light">{{article.dateTo | date:'M/d/y'}}</p>
+                </div>
+                <div class="col-lg-2 text-end">
+                    <button class="btn btn-danger me-3" (click)="DeleteArticle(article.id)">Delete</button>
+                    <a class="btn btn-outline-info" [routerLink]="['/article',article.id]">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #Loading>
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </ng-template>
+</div>
+
+<!-- Pagination -->
+<nav aria-label="Page navigation example" class="mt-4 d-flex justify-content-center">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+
+        <li class="page-item" [ngClass]="{'active': currentIndex == index}" *ngFor="let index of pagesNumber">
+            <a class="page-link" (click)="FetchArticles(index)">{{index}}</a>
+        </li>
+
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
