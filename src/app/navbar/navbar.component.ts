@@ -1,3 +1,4 @@
+import { UserService } from './../Services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  isValid: boolean = false;
+  constructor(private _userService: UserService) { }
 
   ngOnInit(): void {
+    this._userService.userCredential.subscribe({
+      next: (response) => {
+        if (this._userService.userCredential.getValue() != null) {
+          this.isValid = true;
+        }
+        else {
+          this.isValid = false;
+        }
+      },
+      error: (error) => console.log(error)
+    })
   }
 
 }

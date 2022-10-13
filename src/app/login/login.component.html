@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="container m-auto my-4 p-4" style="width: 70%; border-radius: 7px; border: 1px solid grey;">
+<div class="d-flex justify-content-center my-4">
+    <h5>LogIn</h5>
+</div>
+<form [formGroup]="signInForm" (ngSubmit)="Submit()">
+    <div *ngIf="errorMessage" class="p-2 my-2" style="border:1px solid tomato; border-radius: 5px; background-color: tomato; color: white;">
+        <span>{{errorMessage}}</span>
+    </div>
+    <div class="mb-3">
+      <label for="userName" class="form-label">User Name</label>
+      <input type="text" class="form-control" id="userName" formControlName="userName">
+      <span class="text-danger" *ngIf="!signInForm.get('userName').valid && signInForm.get('userName').touched">Enter User Name</span>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+      <span class="text-danger" *ngIf="!signInForm.get('password').valid && signInForm.get('password').touched ">Enter Password</span>
+    </div>
+    <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
